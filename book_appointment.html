@@ -1,29 +1,40 @@
-<link type="text/css" rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html>
 
-<form method="post" class="form2">   
-    <h1>Book Our Doctor</h1>
+<head>
+    <title>Tele_Medicine Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="style.css">
+</head>
 
-    <label for="patient_name">Name:</label>
-    <input type="text" id="patient_name" name="patient_name" required>
-    
-    <label for="doctor">Choose Doctor:</label>
-    <select id="doctor" name="doctor" required>
-        {% for doctor in doctors %}
-        <option value="{{ doctor.id }}"> Dr Mark </option>
-        <option value="{{ doctor.id }}"> Dr Mercy </option>
-        <option value="{{ doctor.id }}"> Dr Brian </option>
-        <option value="{{ doctor.id }}"> Dr Lucy</option>
-        <option value="{{ doctor.id }}"> Dr Vio</option>
-        <option value="{{ doctor.id }}"> Dr Leo</option>
+<body>
+    <form action="/book_appointment" method="POST" class="form2">
+        <h1>Book Our Doctor</h1>
 
-        {% endfor %}
-    </select>
-    
-    <label for="date">Date:</label>
-    <input type="date" id="date" name="date" required>
-    
-    <label for="time">Time:</label>
-    <input type="time" id="time" name="time" required>
-    
-    <button type="submit">Book Appointment</button>
-</form>
+        <label for="patient_name">Name:</label>
+        <input type="text" id="patient_name" name="patient_name" required>
+
+        <label for="doctor">Choose Doctor:</label>
+        <select id="doctor" name="doctor" required>
+            <option value="1">Dr Mark</option>
+            <option value="2">Dr Mercy</option>
+            <option value="3">Dr Brian</option>
+            <option value="4">Dr Lucy</option>
+            <option value="5">Dr Vio</option>
+            <option value="6">Dr Leo</option>
+        </select>
+
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" required>
+
+        <label for="time">Time:</label>
+        <input type="time" id="time" name="time" required>
+
+        <button type="submit">Book Appointment</button>
+    </form>
+
+    <script src="booking.js"></script>
+</body>
+
+</html>
